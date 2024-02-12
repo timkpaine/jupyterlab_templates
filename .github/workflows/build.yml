@@ -53,25 +53,20 @@ jobs:
       run: npm install -g yarn
 
     - name: Install dependencies
-      run: |
-        make develop
+      run: make develop
 
-    - name: Build 
-      run: |
-        make build
+    - name: Build
+      run: make build
 
     - name: Lint
-      run: |
-        make lint
+      run: make lint
 
     - name: Checks
-      run: |
-        make checks
+      run: make checks
       if: ${{ matrix.os == 'ubuntu-latest' }}
 
     - name: Test
-      run: |
-        make tests
+      run: make tests
       if: ${{ matrix.os == 'ubuntu-latest' }}
 
     - name: Upload test results (Python)
@@ -99,6 +94,5 @@ jobs:
       uses: codecov/codecov-action@v4
 
     - name: Twine check
-      run: |
-        make dist
+      run: make dist
 
